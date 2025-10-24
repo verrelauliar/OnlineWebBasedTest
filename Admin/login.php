@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Arahkan berdasarkan role
                 if ($row['role'] == 'admin') {
-                    header("Location: /KPTEST/Admin/dashboard.php");
+                    header("Location: /OnlineWebBasedTest/Admin/dashboard.php");
                 } elseif ($row['role'] == 'guru') {
                     header("Location: guru/dashboard.php");
                 } elseif ($row['role'] == 'siswa') {
