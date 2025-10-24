@@ -97,7 +97,7 @@ if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'admin') {
 
 <header>
     <h2>Dashboard Admin</h2>
-    <a href="Admin/login.php">Logout</a>
+    <a href="login.php">Logout</a>
 </header>
 
 <div class="container">
