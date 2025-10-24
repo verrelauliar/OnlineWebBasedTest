@@ -22,11 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Arahkan berdasarkan role
                 if ($row['role'] == 'admin') {
-                    header("Location: /OnlineWebBasedTest/Admin/dashboard.php");
+                    header("Location: dashboard.php");
                 } elseif ($row['role'] == 'guru') {
-                    header("Location: guru/dashboard.php");
+                    header("Location: ../Teacher/dashboard_teacher.php");
                 } elseif ($row['role'] == 'siswa') {
-                    header("Location: siswa/dashboard.php");
+                    header("Location: ../Student/dashboard_student.php");
                 }
                 exit();
             }

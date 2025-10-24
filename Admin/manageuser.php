@@ -19,13 +19,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['tambah_akun'])) {
     $role = $_POST['role'];
     $status = $_POST['status_aktif'];
 
-    $check = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'");
-    if (mysqli_num_rows($check) > 0) {
-        $msg = "⚠️ Username sudah digunakan!";
+    // Basic validation
+    if (empty($username) || strlen($username) < 3) {
+        $msg = "⚠️ Username harus diisi dan minimal 3 karakter!";
+    } elseif (!in_array($role, ['admin', 'guru', 'siswa'])) {
+        $msg = "⚠️ Role tidak valid!";
+    } elseif (!in_array($status, ['aktif', 'nonaktif'])) {
+        $msg = "⚠️ Status tidak valid!";
     } else {
-        $insert = mysqli_query($conn, "INSERT INTO users (username, password, role, status_aktif) 
-                                       VALUES ('$username', '$password', '$role', '$status')");
-        $msg = $insert ? "✅ Akun berhasil ditambahkan!" : "❌ Gagal menambah akun.";
+        $check = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'");
+        if (mysqli_num_rows($check) > 0) {
+            $msg = "⚠️ Username sudah digunakan!";
+        } else {
+            $insert = mysqli_query($conn, "INSERT INTO users (username, password, role, status_aktif) 
+                                           VALUES ('$username', '$password', '$role', '$status')");
+            $msg = $insert ? "✅ Akun berhasil ditambahkan!" : "❌ Gagal menambah akun.";
+        }
     }
 }
 ?>

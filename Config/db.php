@@ -8,6 +8,7 @@ $port = 3305; //DEBUGGING, ADJUST PORT IF NEEDED!!
 $conn = @mysqli_connect($host, $user, $pass, $db, $port);
 
 if (!$conn) {
-    die("Koneksi gagal: " . mysqli_connect_error());
+    error_log("Database connection failed: " . mysqli_connect_error());
+    die("Koneksi database gagal. Silakan coba lagi nanti.");
 }
 ?>
