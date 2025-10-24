@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'C:/xampp/htdocs/KPTEST/Config/db.php';
+include 'C:/xampp/htdocs/OnlineWebBasedTest/Config/db.php';
 
 if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'admin') {
     header("Location: login.php");
