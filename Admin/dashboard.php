@@ -108,12 +108,6 @@ if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'admin') {
 
     <div class="grid">
         <div class="card">
-            <h3>🕓 Jadwal Ujian</h3>
-            <p>Atur jadwal dan waktu pelaksanaan ujian.</p>
-            <a href="manageSchedule.php">Kelola</a>
-        </div>
-
-        <div class="card">
             <h3>🏫 Manage Kelas</h3>
             <p>Tambah, ubah, atau hapus data kelas.</p>
             <a href="manageClasses.php">Kelola</a>
@@ -123,12 +117,6 @@ if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'admin') {
             <h3>📘 Pelajaran Ujian</h3>
             <p>Kelola daftar pelajaran untuk ujian.</p>
             <a href="manageSubjects.php">Kelola</a>
-        </div>
-
-        <div class="card">
-            <h3>👨‍🎓 User Siswa</h3>
-            <p>Kelola akun dan data siswa.</p>
-            <a href="manageStudents.php">Kelola</a>
         </div>
 
         <div class="card">
