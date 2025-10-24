@@ -1,16 +1,11 @@
 <?php
-$host = "localhost";
+$host = "127.0.0.1"; // use numeric host to avoid socket mismatch
 $user = "root";
 $pass = "";
 $db   = "mumtaza_ujian";
+$port = 3305;
 
-// Default connection
-$conn = @mysqli_connect($host, $user, $pass, $db);
-
-// If failed, retry with custom port (DEV ONLY)
-if (!$conn) {
-    $conn = @mysqli_connect($host . ":3305", $user, $pass, $db);
-}
+$conn = @mysqli_connect($host, $user, $pass, $db, $port);
 
 if (!$conn) {
     die("Koneksi gagal: " . mysqli_connect_error());
