@@ -78,9 +78,7 @@ if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'admin') {
         padding: 20px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         transition: all 0.2s ease;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        position: relative;
     }
     .card:hover {
         transform: translateY(-5px);
@@ -89,15 +87,47 @@ if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'admin') {
     .card h4 {
         color: #1e40af;
         margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .info-icon {
+        cursor: pointer;
+        font-size: 1.2rem;
+        color: #2563eb;
+        transition: color 0.2s;
+    }
+    .info-icon:hover {
+        color: #1d4ed8;
     }
     .card p {
         font-size: 0.9rem;
         color: #475569;
         margin-bottom: 12px;
     }
+    .expandable {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+        margin-top: 0;
+    }
+    .expandable.open {
+        max-height: 200px;
+        opacity: 1;
+        margin-top: 10px;
+    }
+    .expandable p {
+        background: #f8fafc;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
     .btn-group {
         display: flex;
         justify-content: space-between;
+        margin-top: 10px;
     }
     .edit-btn, .delete-btn {
         padding: 8px 12px;
@@ -137,12 +167,18 @@ if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'admin') {
     </div>
 
     <div class="grid">
-        <!-- Example cards (mock data) -->
+        <!-- Example card -->
         <div class="card">
-            <div>
-                <h4>Matematika</h4>
-                <p>Kode: MATH01<br>Dasar-dasar perhitungan dan logika.</p>
+            <h4>Matematika <span class="info-icon" onclick="toggleInfo(this)">ℹ️</span></h4>
+            <p>Kode: MATH01<br>Dasar-dasar perhitungan dan logika.</p>
+
+            <div class="expandable">
+                <p><b>Guru Pengajar:</b> Ibu Rina Kusuma<br>
+                <b>Dibuat:</b> 12 Oktober 2025<br>
+                <b>Durasi Ujian:</b> 60 menit<br>
+                <b>Keterangan:</b> Wajib untuk kelas 10 dan 11.</p>
             </div>
+
             <div class="btn-group">
                 <a href="#" class="edit-btn">Edit</a>
                 <a href="#" class="delete-btn">Hapus</a>
@@ -150,21 +186,16 @@ if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'admin') {
         </div>
 
         <div class="card">
-            <div>
-                <h4>Bahasa Inggris</h4>
-                <p>Kode: ENG01<br>Pemahaman dasar grammar dan speaking.</p>
-            </div>
-            <div class="btn-group">
-                <a href="#" class="edit-btn">Edit</a>
-                <a href="#" class="delete-btn">Hapus</a>
-            </div>
-        </div>
+            <h4>Bahasa Inggris <span class="info-icon" onclick="toggleInfo(this)">ℹ️</span></h4>
+            <p>Kode: ENG01<br>Pemahaman grammar dan speaking dasar.</p>
 
-        <div class="card">
-            <div>
-                <h4>Fisika</h4>
-                <p>Kode: PHY01<br>Konsep dasar energi dan gerak.</p>
+            <div class="expandable">
+                <p><b>Guru Pengajar:</b> Pak Dimas Santoso<br>
+                <b>Dibuat:</b> 10 Oktober 2025<br>
+                <b>Durasi Ujian:</b> 45 menit<br>
+                <b>Keterangan:</b> Materi listening dan reading.</p>
             </div>
+
             <div class="btn-group">
                 <a href="#" class="edit-btn">Edit</a>
                 <a href="#" class="delete-btn">Hapus</a>
@@ -172,6 +203,13 @@ if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'admin') {
         </div>
     </div>
 </div>
+
+<script>
+function toggleInfo(icon) {
+    const expandable = icon.closest('.card').querySelector('.expandable');
+    expandable.classList.toggle('open');
+}
+</script>
 
 </body>
 </html>
