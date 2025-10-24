@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #6f42c1, #7b68ee);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+.nav-item {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  text-decoration: underline;
+}
+
+.logout-btn {
+  background: #ff4d6d;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #ff1e4d;
+}
+
+.main-content {
+  flex: 1;
+  padding: 50px;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.welcome-section h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+.welcome-section p {
+  font-size: 1em;
+  opacity: 0.9;
+}
+
+.button-group {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0 10px;
+}
+
+.btn.primary {
+  background-color: #4e2a84;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background-color: #6035a7;
+}
+
+.btn.secondary {
+  background-color: #ffffff;
+  color: #4e2a84;
+}
+
+.btn.secondary:hover {
+  background-color: #f2e8ff;
+}
+
+.stats-section {
+  text-align: center;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 20px 40px;
+  width: 180px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+}
