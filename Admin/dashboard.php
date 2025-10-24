@@ -110,19 +110,19 @@ if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'admin') {
         <div class="card">
             <h3>🏫 Manage Kelas</h3>
             <p>Tambah, ubah, atau hapus data kelas.</p>
-            <a href="manageClasses.php">Kelola</a>
+            <a href="AdminManage/manageClasses.php">Kelola</a>
         </div>
 
         <div class="card">
             <h3>📘 Pelajaran Ujian</h3>
             <p>Kelola daftar pelajaran untuk ujian.</p>
-            <a href="manageSubjects.php">Kelola</a>
+            <a href="AdminManage/manageSubjects.php">Kelola</a>
         </div>
 
         <div class="card">
             <h3>👩‍🏫 User Guru</h3>
             <p>Kelola akun dan data guru.</p>
-            <a href="manageTeachers.php">Kelola</a>
+            <a href="AdminManage/manageTeachers.php">Kelola</a>
         </div>
     </div>
 </div>
