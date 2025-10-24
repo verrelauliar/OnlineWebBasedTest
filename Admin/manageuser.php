@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("C:/xampp/htdocs/OnlineWebBasedTest/Config/db.php"); // Pastikan koneksi database disini
+require_once("../Config/db.php"); // Pastikan koneksi database disini
 
 if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'admin') {
     header("Location: dashboard.php");

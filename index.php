@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'C:/xampp/htdocs/OnlineWebBasedTest/Config/db.php'; // Sesuaikan dengan path db.php kamu
+include 'Config/db.php'; // Sesuaikan dengan path db.php kamu
 
 // Jika sudah login, arahkan ke dashboard sesuai role
 if (isset($_SESSION['user'])) {

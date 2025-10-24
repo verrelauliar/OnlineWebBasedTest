@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'C:/xampp/htdocs/OnlineWebBasedTest/Config/db.php';
+include '../../Config/db.php';
 
 // Authorization check
 if (!isset($_SESSION['id_user']) || $_SESSION['role'] !== 'admin') {

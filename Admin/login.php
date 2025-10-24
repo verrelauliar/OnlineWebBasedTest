@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'C:/xampp/htdocs/OnlineWebBasedTest/Config/db.php';
+include '../Config/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
