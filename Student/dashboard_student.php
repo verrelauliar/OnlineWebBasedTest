@@ -175,7 +175,7 @@ body {
             <div>Duration: <?= $q['duration'] ?> minutes</div>
             <div>Due Date: <?= date('m/d/Y', strtotime($q['due_date'])) ?></div>
           </div>
-          <a href="#" class="btn btn-custom w-100 mt-3">Start Quiz</a>
+          <a href="exam-student.php" class="btn btn-custom w-100 mt-3">Start Quiz</a>
         </div>
       </div>
       <?php endforeach; ?>
@@ -202,7 +202,7 @@ body {
           <div class="progress mt-2">
             <div class="progress-bar bg-success" style="width: <?= $c['score'] ?>%"></div>
           </div>
-          <a href="#" class="btn btn-outline-custom w-100 mt-3">View Results</a>
+          <a href="view-results-student.php" class="btn btn-outline-custom w-100 mt-3">View Results</a>
         </div>
       </div>
       <?php endforeach; ?>
