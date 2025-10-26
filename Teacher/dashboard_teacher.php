@@ -215,11 +215,32 @@ $username = isset($user['name']) && !is_array($user['name']) ? $user['name'] : '
     border-radius: 6px;
   }
 
-  .average-score {
+  .score-and-view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 8px;
+  }
+
+  .average-score {
     color: var(--text-dark);
     font-size: 14px;
     font-weight: 500;
+  }
+
+  .view-btn {
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: #009b65;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
   }
 
   .quiz-actions {
@@ -236,6 +257,10 @@ $username = isset($user['name']) && !is_array($user['name']) ? $user['name'] : '
     font-weight: 600;
     cursor: pointer;
     border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
   }
 
   .view-btn {
@@ -306,11 +331,13 @@ $username = isset($user['name']) && !is_array($user['name']) ? $user['name'] : '
       <div class="progress-label">Progress</div>
       <div class="progress-bar"><div class="progress-fill" style="width:72%;"></div></div>
       <small>18/25 students</small>
-      <div class="average-score">Average Score: 82%</div>
+      <div class="score-and-view">
+        <div class="average-score">Average Score: 82%</div>
+        <button class="view-btn"><?xml version="1.0"?><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 18H17V16H7V18Z" fill="currentColor"/><path d="M17 14H7V12H17V14Z" fill="currentColor"/><path d="M7 10H11V8H7V10Z" fill="currentColor"/><path clip-rule="evenodd" d="M6 2C4.34315 2 3 3.34315 3 5V19C3 20.6569 4.34315 22 6 22H18C19.6569 22 21 20.6569 21 19V9C21 5.13401 17.866 2 14 2H6ZM6 4H13V9H19V19C19 19.5523 18.5523 20 18 20H6C5.44772 20 5 19.5523 5 19V5C5 4.44772 5.44772 4 6 4ZM15 4.10002C16.6113 4.4271 17.9413 5.52906 18.584 7H15V4.10002Z" fill="currentColor" fill-rule="evenodd"/></svg> View Results</button>
+      </div>
       <div class="quiz-actions">
-        <button class="view-btn">View Results</button>
-        <button class="edit-btn">✏️ Edit</button>
-        <button class="delete-btn">🗑 Delete</button>
+        <button class="edit-btn"><?xml version="1.0"?><svg class="feather feather-edit" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</button>
+        <button class="delete-btn"><?xml version="1.0"?><svg class="feather feather-trash-2" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg> Delete</button>
       </div>
     </div>
 
@@ -325,11 +352,13 @@ $username = isset($user['name']) && !is_array($user['name']) ? $user['name'] : '
       <div class="progress-label">Progress</div>
       <div class="progress-bar"><div class="progress-fill" style="width:80%;"></div></div>
       <small>20/25 students</small>
-      <div class="average-score">Average Score: 76%</div>
+      <div class="score-and-view">
+        <div class="average-score">Average Score: 76%</div>
+        <button class="view-btn"><?xml version="1.0"?><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 18H17V16H7V18Z" fill="currentColor"/><path d="M17 14H7V12H17V14Z" fill="currentColor"/><path d="M7 10H11V8H7V10Z" fill="currentColor"/><path clip-rule="evenodd" d="M6 2C4.34315 2 3 3.34315 3 5V19C3 20.6569 4.34315 22 6 22H18C19.6569 22 21 20.6569 21 19V9C21 5.13401 17.866 2 14 2H6ZM6 4H13V9H19V19C19 19.5523 18.5523 20 18 20H6C5.44772 20 5 19.5523 5 19V5C5 4.44772 5.44772 4 6 4ZM15 4.10002C16.6113 4.4271 17.9413 5.52906 18.584 7H15V4.10002Z" fill="currentColor" fill-rule="evenodd"/></svg> View Results</button>
+      </div>
       <div class="quiz-actions">
-        <button class="view-btn">View Results</button>
-        <button class="edit-btn">✏️ Edit</button>
-        <button class="delete-btn">🗑 Delete</button>
+        <button class="edit-btn"><?xml version="1.0"?><svg class="feather feather-edit" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</button>
+        <button class="delete-btn"><?xml version="1.0"?><svg class="feather feather-trash-2" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg> Delete</button>
       </div>
     </div>
 
@@ -344,11 +373,13 @@ $username = isset($user['name']) && !is_array($user['name']) ? $user['name'] : '
       <div class="progress-label">Progress</div>
       <div class="progress-bar"><div class="progress-fill" style="width:60%;"></div></div>
       <small>15/25 students</small>
-      <div class="average-score">Average Score: 88%</div>
+      <div class="score-and-view">
+        <div class="average-score">Average Score: 88%</div>
+        <button class="view-btn"><?xml version="1.0"?><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 18H17V16H7V18Z" fill="currentColor"/><path d="M17 14H7V12H17V14Z" fill="currentColor"/><path d="M7 10H11V8H7V10Z" fill="currentColor"/><path clip-rule="evenodd" d="M6 2C4.34315 2 3 3.34315 3 5V19C3 20.6569 4.34315 22 6 22H18C19.6569 22 21 20.6569 21 19V9C21 5.13401 17.866 2 14 2H6ZM6 4H13V9H19V19C19 19.5523 18.5523 20 18 20H6C5.44772 20 5 19.5523 5 19V5C5 4.44772 5.44772 4 6 4ZM15 4.10002C16.6113 4.4271 17.9413 5.52906 18.584 7H15V4.10002Z" fill="currentColor" fill-rule="evenodd"/></svg> View Results</button>
+      </div>
       <div class="quiz-actions">
-        <button class="view-btn">View Results</button>
-        <button class="edit-btn">✏️ Edit</button>
-        <button class="delete-btn">🗑 Delete</button>
+        <button class="edit-btn"><?xml version="1.0"?><svg class="feather feather-edit" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit</button>
+        <button class="delete-btn"><?xml version="1.0"?><svg class="feather feather-trash-2" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg> Delete</button>
       </div>
     </div>
   </div>
