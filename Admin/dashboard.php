@@ -8,11 +8,11 @@ if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'admin') {
 }
 ?>
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Admin</title>
+<title>Admin Dashboard</title>
 <style>
     body {
         font-family: "Segoe UI", sans-serif;
@@ -96,33 +96,33 @@ if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'admin') {
 <body>
 
 <header>
-    <h2>Dashboard Admin</h2>
+    <h2>Admin Dashboard</h2>
     <a href="login.php">Logout</a>
 </header>
 
 <div class="container">
     <div class="welcome">
-        <h3>Selamat Datang, <?= $_SESSION['username']; ?> 👋</h3>
-        <p>Anda login sebagai <b>Admin</b>. Silakan kelola data ujian dan pengguna di bawah ini.</p>
+        <h3>Welcome, <?= $_SESSION['username']; ?>.</h3>
+        <p>You are logged in as <b>Admin</b>. Please manage the exam and user data below.</p>
     </div>
 
     <div class="grid">
         <div class="card">
-            <h3>🏫 Manage Kelas</h3>
-            <p>Tambah, ubah, atau hapus data kelas.</p>
-            <a href="AdminManage/manageClasses.php">Kelola</a>
+            <h3>🏫 Manage Classes</h3>
+            <p>Add, edit, or delete class data.</p>
+            <a href="AdminManage/manage_classes.php">Manage</a>
         </div>
 
         <div class="card">
-            <h3>📘 Pelajaran Ujian</h3>
-            <p>Kelola daftar pelajaran untuk ujian.</p>
-            <a href="AdminManage/manageSubjects.php">Kelola</a>
+            <h3>📘 Manage Subjects</h3>
+            <p>Add, edit, or delete subject data.</p>
+            <a href="AdminManage/manage_subjects.php">Manage</a>
         </div>
 
         <div class="card">
-            <h3>👩‍🏫 User Guru</h3>
-            <p>Kelola akun dan data guru.</p>
-            <a href="AdminManage/manageTeachers.php">Kelola</a>
+            <h3>👩‍🏫 Manage Teachers</h3>
+            <p>Add, edit, or delete teacher data.</p>
+            <a href="AdminManage/manage_teachers.php">Manage</a>
         </div>
     </div>
 </div>
