@@ -1,10 +1,26 @@
 <?php
-$host = "127.0.0.1"; // use numeric host to avoid socket mismatch
+$host = "127.0.0.1"; // numeric host to avoid socket mismatch
 $user = "root";
 $pass = "";
 $db   = "mumtaza_ujian";
-$port = 3305; //DEBUGGING, ADJUST PORT IF NEEDED!!
 
+// === Auto-detect MySQL port (3306 or 3305) ===
+$default_ports = [3306, 3305];
+$port = null;
+foreach ($default_ports as $p) {
+    $sock = @fsockopen($host, $p, $errno, $errstr, 0.5);
+    if ($sock) {
+        $port = $p;
+        fclose($sock);
+        break;
+    }
+}
+if ($port === null) {
+    error_log("No active MySQL port detected (tried 3306 and 3305).");
+    die("Tidak dapat menemukan port MySQL aktif.");
+}
+
+// === Connect to MySQL ===
 $conn = @mysqli_connect($host, $user, $pass, $db, $port);
 
 if (!$conn) {
